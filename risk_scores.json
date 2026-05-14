@@ -1,0 +1,182 @@
+[
+  {
+    "post_id": "P14",
+    "urgency": "critical",
+    "raw_engagement": 96.5,
+    "engagement_multiplier": 1.5451807228915664,
+    "narrative_count": 1,
+    "contains_legal_threat": true,
+    "risk_score": 96.80722891566265
+  },
+  {
+    "post_id": "P06",
+    "urgency": "high",
+    "raw_engagement": 338.0,
+    "engagement_multiplier": 3.0,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 90.0
+  },
+  {
+    "post_id": "P07",
+    "urgency": "critical",
+    "raw_engagement": 18.0,
+    "engagement_multiplier": 1.072289156626506,
+    "narrative_count": 1,
+    "contains_legal_threat": true,
+    "risk_score": 77.89156626506025
+  },
+  {
+    "post_id": "P12",
+    "urgency": "high",
+    "raw_engagement": 256.5,
+    "engagement_multiplier": 2.509036144578313,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 77.72590361445782
+  },
+  {
+    "post_id": "P20",
+    "urgency": "high",
+    "raw_engagement": 179.0,
+    "engagement_multiplier": 2.0421686746987953,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 66.05421686746988
+  },
+  {
+    "post_id": "P19",
+    "urgency": "high",
+    "raw_engagement": 100.5,
+    "engagement_multiplier": 1.569277108433735,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 54.23192771084337
+  },
+  {
+    "post_id": "P16",
+    "urgency": "high",
+    "raw_engagement": 99.5,
+    "engagement_multiplier": 1.5632530120481927,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 54.081325301204814
+  },
+  {
+    "post_id": "P17",
+    "urgency": "high",
+    "raw_engagement": 41.0,
+    "engagement_multiplier": 1.2108433734939759,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 45.27108433734939
+  },
+  {
+    "post_id": "P01",
+    "urgency": "high",
+    "raw_engagement": 34.0,
+    "engagement_multiplier": 1.1686746987951806,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 44.21686746987952
+  },
+  {
+    "post_id": "P04",
+    "urgency": "high",
+    "raw_engagement": 6.0,
+    "engagement_multiplier": 1.0,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 40.0
+  },
+  {
+    "post_id": "P05",
+    "urgency": "medium",
+    "raw_engagement": 150.5,
+    "engagement_multiplier": 1.8704819277108435,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 33.704819277108435
+  },
+  {
+    "post_id": "P15",
+    "urgency": "medium",
+    "raw_engagement": 103.0,
+    "engagement_multiplier": 1.5843373493975905,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 30.843373493975903
+  },
+  {
+    "post_id": "P02",
+    "urgency": "medium",
+    "raw_engagement": 81.5,
+    "engagement_multiplier": 1.4548192771084336,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 29.548192771084338
+  },
+  {
+    "post_id": "P09",
+    "urgency": "medium",
+    "raw_engagement": 52.0,
+    "engagement_multiplier": 1.2771084337349397,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 27.771084337349397
+  },
+  {
+    "post_id": "P10",
+    "urgency": "medium",
+    "raw_engagement": 51.5,
+    "engagement_multiplier": 1.2740963855421688,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 27.74096385542169
+  },
+  {
+    "post_id": "P18",
+    "urgency": "medium",
+    "raw_engagement": 33.0,
+    "engagement_multiplier": 1.1626506024096386,
+    "narrative_count": 1,
+    "contains_legal_threat": false,
+    "risk_score": 26.626506024096386
+  },
+  {
+    "post_id": "P11",
+    "urgency": "low",
+    "raw_engagement": 112.0,
+    "engagement_multiplier": 1.6385542168674698,
+    "narrative_count": 0,
+    "contains_legal_threat": false,
+    "risk_score": 4.9156626506024095
+  },
+  {
+    "post_id": "P03",
+    "urgency": "low",
+    "raw_engagement": 41.0,
+    "engagement_multiplier": 1.2108433734939759,
+    "narrative_count": 0,
+    "contains_legal_threat": false,
+    "risk_score": 3.6325301204819276
+  },
+  {
+    "post_id": "P08",
+    "urgency": "low",
+    "raw_engagement": 13.5,
+    "engagement_multiplier": 1.0451807228915662,
+    "narrative_count": 0,
+    "contains_legal_threat": false,
+    "risk_score": 3.1355421686746983
+  },
+  {
+    "post_id": "P13",
+    "urgency": "low",
+    "raw_engagement": 7.0,
+    "engagement_multiplier": 1.0060240963855422,
+    "narrative_count": 0,
+    "contains_legal_threat": false,
+    "risk_score": 3.0180722891566267
+  }
+]

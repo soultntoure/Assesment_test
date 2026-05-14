@@ -71,7 +71,7 @@ def regenerate_available_artifacts() -> None:
     write_json(ESCALATION_ROUTING_PATH, [route.model_dump() for route in routes])
     _log_stage(ROUTING_COMPLETE, "heuristic routing", ["risk_scores.json", "narratives.json"], ESCALATION_ROUTING_PATH)
 
-    drafts = _draft_heuristically(top_posts, classified)
+    drafts = _draft_heuristically(preprocessed, classified)
     write_text(RESPONSE_DRAFTS_PATH, _format_drafts(drafts))
     _log_stage(RESPONSE_DRAFTS_GENERATED, "heuristic public response drafts", ["risk_scores.json"], RESPONSE_DRAFTS_PATH)
 
@@ -185,17 +185,16 @@ def _route_heuristically(top_posts: list[dict], classified: list[ClassifiedPost]
     return routes
 
 
-def _draft_heuristically(top_posts: list[dict], classified: list[ClassifiedPost]) -> list[ResponseDraft]:
-    by_id = {post.post_id: post for post in classified}
+def _draft_heuristically(preprocessed, classified: list[ClassifiedPost]) -> list[ResponseDraft]:
+    context_by_id = {post.post_id: post for post in preprocessed}
     drafts = []
-    for post in top_posts:
-        classified_post = by_id[post["post_id"]]
+    for classified_post in classified:
         if classified_post.urgency != "critical" and not classified_post.contains_legal_threat:
             continue
         drafts.append(
             ResponseDraft(
-                post_id=post["post_id"],
-                platform=str(post.get("platform") or "social platform"),
+                post_id=classified_post.post_id,
+                platform=str(context_by_id[classified_post.post_id].platform or "social platform"),
                 draft_response="We understand your concern and want to help. Please contact us through our secure support channel with your ticket reference so the team can review the case details. We cannot discuss account-specific information publicly.",
                 send_gate_note="Confirm account/ticket status, approved support path, and Legal/Compliance sign-off before posting.",
             )

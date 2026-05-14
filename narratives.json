@@ -1,0 +1,54 @@
+[
+  {
+    "narrative_id": "N01",
+    "title": "Account access, KYC and withdrawal friction",
+    "supporting_post_ids": [
+      "P01",
+      "P04",
+      "P07",
+      "P10",
+      "P12",
+      "P14",
+      "P17",
+      "P19",
+      "P20"
+    ],
+    "narrative_strength": "strong",
+    "estimated_hours_until_trending": 6,
+    "recommended_action": "Coordinate owner teams, verify operational facts, and prepare approved messaging."
+  },
+  {
+    "narrative_id": "N02",
+    "title": "Spread pricing concerns",
+    "supporting_post_ids": [
+      "P02",
+      "P09",
+      "P15"
+    ],
+    "narrative_strength": "strong",
+    "estimated_hours_until_trending": 6,
+    "recommended_action": "Coordinate owner teams, verify operational facts, and prepare approved messaging."
+  },
+  {
+    "narrative_id": "N03",
+    "title": "Bot and execution reliability concerns",
+    "supporting_post_ids": [
+      "P05",
+      "P18"
+    ],
+    "narrative_strength": "moderate",
+    "estimated_hours_until_trending": 12,
+    "recommended_action": "Coordinate owner teams, verify operational facts, and prepare approved messaging."
+  },
+  {
+    "narrative_id": "N04",
+    "title": "Deposit and payment reliability",
+    "supporting_post_ids": [
+      "P06",
+      "P16"
+    ],
+    "narrative_strength": "moderate",
+    "estimated_hours_until_trending": 12,
+    "recommended_action": "Coordinate owner teams, verify operational facts, and prepare approved messaging."
+  }
+]

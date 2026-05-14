@@ -1,0 +1,49 @@
+[
+  {
+    "post_id": "P14",
+    "teams": [
+      "PR/Comms",
+      "Legal",
+      "Compliance",
+      "Customer Support"
+    ],
+    "briefing_note": "withdrawal: risk score 96.81. Verify facts and align response owner."
+  },
+  {
+    "post_id": "P06",
+    "teams": [
+      "PR/Comms",
+      "Finance",
+      "Customer Support"
+    ],
+    "briefing_note": "deposit: risk score 90.00. Verify facts and align response owner."
+  },
+  {
+    "post_id": "P07",
+    "teams": [
+      "PR/Comms",
+      "Legal",
+      "Compliance",
+      "Customer Support"
+    ],
+    "briefing_note": "account_suspension: risk score 77.89. Verify facts and align response owner."
+  },
+  {
+    "post_id": "P12",
+    "teams": [
+      "PR/Comms",
+      "Customer Support",
+      "Compliance"
+    ],
+    "briefing_note": "account_suspension: risk score 77.73. Verify facts and align response owner."
+  },
+  {
+    "post_id": "P20",
+    "teams": [
+      "PR/Comms",
+      "Customer Support",
+      "Compliance"
+    ],
+    "briefing_note": "withdrawal: risk score 66.05. Verify facts and align response owner."
+  }
+]
