@@ -19,8 +19,9 @@ class ExampleResponse(BaseModel):
 
 
 class FakeStructuredModel:
-    def invoke(self, messages):
-        assert messages == "classify this"
+    def invoke(self, payload):
+        assert list(payload) == ["messages"]
+        assert payload["messages"][0].content == "classify this"
         return ExampleResponse(value="ok")
 
 

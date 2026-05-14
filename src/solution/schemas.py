@@ -67,6 +67,10 @@ class ClassifiedPost(StrictModel):
         return _validate_controlled_value(value, URGENCY_VALUES, "urgency")
 
 
+class ClassificationResult(StrictModel):
+    posts: list[ClassifiedPost]
+
+
 class Narrative(StrictModel):
     narrative_id: str
     title: str

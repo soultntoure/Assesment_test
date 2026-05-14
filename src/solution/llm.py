@@ -8,6 +8,7 @@ from typing import Generic, Iterable, TypeVar
 
 from dotenv import load_dotenv
 from langchain.agents import create_agent
+from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from pydantic import BaseModel
 
@@ -114,8 +115,8 @@ class StructuredLLM(Generic[SchemaT]):
 
     def _messages(self, prompt: str | ChatPromptTemplate, prompt_kwargs: dict) -> object:
         if isinstance(prompt, str):
-            return prompt
-        return prompt.format_messages(**prompt_kwargs)
+            return {"messages": [HumanMessage(content=prompt)]}
+        return {"messages": prompt.format_messages(**prompt_kwargs)}
 
     def _prompt_text(self, prompt: str | ChatPromptTemplate, prompt_kwargs: dict) -> str:
         if isinstance(prompt, str):

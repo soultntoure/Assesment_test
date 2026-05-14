@@ -1,0 +1,202 @@
+[
+  {
+    "post_id": "P01",
+    "sentiment": "negative",
+    "topic": "withdrawal",
+    "urgency": "high",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P02",
+    "sentiment": "negative",
+    "topic": "spread_pricing",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": true,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P03",
+    "sentiment": "positive",
+    "topic": "general",
+    "urgency": "low",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P04",
+    "sentiment": "neutral",
+    "topic": "regulatory",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P05",
+    "sentiment": "negative",
+    "topic": "technical",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P06",
+    "sentiment": "positive",
+    "topic": "product_feedback",
+    "urgency": "low",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P07",
+    "sentiment": "negative",
+    "topic": "account_suspension",
+    "urgency": "critical",
+    "contains_legal_threat": true,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P08",
+    "sentiment": "negative",
+    "topic": "general",
+    "urgency": "low",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": true,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P09",
+    "sentiment": "negative",
+    "topic": "spread_pricing",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P10",
+    "sentiment": "neutral",
+    "topic": "kyc",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "ms",
+    "translated": true
+  },
+  {
+    "post_id": "P11",
+    "sentiment": "positive",
+    "topic": "product_feedback",
+    "urgency": "low",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P12",
+    "sentiment": "negative",
+    "topic": "account_suspension",
+    "urgency": "high",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P13",
+    "sentiment": "positive",
+    "topic": "general",
+    "urgency": "low",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P14",
+    "sentiment": "negative",
+    "topic": "withdrawal",
+    "urgency": "high",
+    "contains_legal_threat": true,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P15",
+    "sentiment": "negative",
+    "topic": "spread_pricing",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P16",
+    "sentiment": "negative",
+    "topic": "deposit",
+    "urgency": "high",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P17",
+    "sentiment": "negative",
+    "topic": "account_suspension",
+    "urgency": "high",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P18",
+    "sentiment": "negative",
+    "topic": "technical",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P19",
+    "sentiment": "mixed",
+    "topic": "product_feedback",
+    "urgency": "medium",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  },
+  {
+    "post_id": "P20",
+    "sentiment": "negative",
+    "topic": "account_suspension",
+    "urgency": "high",
+    "contains_legal_threat": false,
+    "contains_competitor_mention": false,
+    "original_language": "en",
+    "translated": false
+  }
+]
