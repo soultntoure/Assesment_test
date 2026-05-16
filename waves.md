@@ -345,8 +345,7 @@ Requirements:
    - Document setup:
      uv sync
    - Document env vars:
-     OPENROUTER_API_KEY
-     OPENROUTER_MODEL
+     GEMINI_API_KEY
    - Document run commands:
      python main.py
      python validate.py
@@ -354,7 +353,7 @@ Requirements:
    - Explain that risk scoring is deterministic code and LLM calls are logged.
 
 2. tests/test_e2e_contract.py:
-   - Add tests that inspect source/artifact contracts without requiring live OpenRouter calls.
+   - Add tests that inspect source/artifact contracts without requiring live Gemini calls or a model env var.
    - Verify data/posts.json exists and contains posts.
    - Verify README mentions python main.py and python validate.py.
    - Verify required artifact names are documented.

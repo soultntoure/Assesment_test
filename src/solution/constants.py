@@ -29,6 +29,9 @@ TEAM_VALUES = (
 
 NARRATIVE_STRENGTH_VALUES = ("strong", "moderate", "weak")
 
+GEMINI_PROVIDER = "gemini"
+DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite"
+
 STAGES = [
     "INIT",
     "POSTS_LOADED",
