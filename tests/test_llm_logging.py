@@ -6,6 +6,8 @@ from pydantic import BaseModel
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from src.solution.base_agent import BaseAgent
+from src.solution.constants import DEFAULT_GEMINI_MODEL
 from src.solution.llm import (
     StructuredLLM,
     hash_prompt,
@@ -50,8 +52,8 @@ def test_log_llm_call_appends_required_jsonl_record(tmp_path):
 
     log_llm_call(
         stage="POSTS_CLASSIFIED",
-        provider="openrouter",
-        model="anthropic/claude-haiku-4-5",
+        provider="gemini",
+        model=DEFAULT_GEMINI_MODEL,
         prompt="Classify these posts",
         input_artifacts=[tmp_path / "preprocessed_posts.json"],
         output_artifact=tmp_path / "classified_posts.json",
@@ -63,12 +65,32 @@ def test_log_llm_call_appends_required_jsonl_record(tmp_path):
 
     record = json.loads(lines[0])
     assert record["stage"] == "POSTS_CLASSIFIED"
-    assert record["provider"] == "openrouter"
-    assert record["model"] == "anthropic/claude-haiku-4-5"
+    assert record["provider"] == "gemini"
+    assert record["model"] == DEFAULT_GEMINI_MODEL
     assert record["prompt_hash"] == hash_prompt("Classify these posts")
     assert record["input_artifacts"] == [str(tmp_path / "preprocessed_posts.json")]
     assert record["output_artifact"] == str(tmp_path / "classified_posts.json")
     assert "T" in record["timestamp"]
+
+
+def test_structured_llm_uses_code_default_model_not_env(monkeypatch, tmp_path):
+    monkeypatch.setenv("GEMINI_MODEL", "env/model-should-not-be-used")
+
+    llm = StructuredLLM(
+        schema=ExampleResponse,
+        log_path=tmp_path / "llm_calls.jsonl",
+        structured_model=FakeStructuredModel(),
+    )
+
+    assert llm.model_name == DEFAULT_GEMINI_MODEL
+
+
+def test_base_agent_uses_code_default_model_not_env(monkeypatch):
+    monkeypatch.setenv("GEMINI_MODEL", "env/model-should-not-be-used")
+
+    agent = BaseAgent(ExampleResponse)
+
+    assert agent.model_name == DEFAULT_GEMINI_MODEL
 
 
 def test_structured_llm_invokes_model_and_logs_call(tmp_path):

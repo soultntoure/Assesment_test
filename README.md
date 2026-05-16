@@ -88,7 +88,7 @@ Each stage depends on the output of the previous stage. Narrative detection rece
         ├── routing.py           # Stage 3 LLM call: escalation routing
         ├── drafts.py            # Stage 4 LLM call: public response drafting
         ├── optional_analysis.py # Sentiment trend + competitor signal extraction
-        ├── llm.py               # LLM client (OpenRouter) + call logger
+        ├── llm.py               # LLM client (Gemini) + call logger
         ├── prompts.py           # Prompt templates for each LLM stage
         ├── artifacts.py         # JSON/text artifact read/write helpers
         ├── validation.py        # Artifact validation checks
@@ -102,7 +102,7 @@ Each stage depends on the output of the previous stage. Narrative detection rece
 
 - **Python 3.13+**
 - **[uv](https://docs.astral.sh/uv/)** (recommended package manager)
-- An **OpenRouter API key** with access to your chosen model
+- A **Gemini API key from Google AI Studio** with access to your chosen model
 
 ---
 
@@ -134,11 +134,10 @@ pip install -e .
 Create a `.env` file in the project root:
 
 ```env
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-OPENROUTER_MODEL=anthropic/claude-haiku-4-5
+GEMINI_API_KEY=your_ai_studio_api_key_here
 ```
 
-> **Supported models:** Any OpenRouter-compatible model. The default is `anthropic/claude-haiku-4-5`. For higher accuracy, use `anthropic/claude-sonnet-4-5` or equivalent.
+> **Model selection:** The default model is selected in code via `DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite"` in `src/solution/constants.py`. Change that constant, or pass an explicit model when constructing the LLM helper, to use another Gemini model.
 
 ### 4. Provide input data
 
@@ -266,11 +265,10 @@ The **top 5 posts by risk score** are flagged for escalation.
 
 ## LLM Configuration
 
-The pipeline uses [OpenRouter](https://openrouter.ai/) to access LLMs. Configure via `.env`:
+The pipeline uses [Google Gemini](https://ai.google.dev/gemini-api/docs) to access LLMs. Configure via `.env`:
 
 ```env
-OPENROUTER_API_KEY=sk-or-v1-...
-OPENROUTER_MODEL=anthropic/claude-haiku-4-5
+GEMINI_API_KEY=your_ai_studio_api_key_here
 ```
 
 Each LLM call is logged to `llm_calls.jsonl` with the following schema:
@@ -279,8 +277,8 @@ Each LLM call is logged to `llm_calls.jsonl` with the following schema:
 {
   "stage": "POSTS_CLASSIFIED",
   "timestamp": "2025-04-10T08:00:00Z",
-  "provider": "openrouter",
-  "model": "anthropic/claude-haiku-4-5",
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
   "prompt_hash": "sha256:...",
   "input_artifacts": ["preprocessed_posts.json"],
   "output_artifact": "classified_posts.json"

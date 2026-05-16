@@ -13,7 +13,7 @@ from langchain_core.prompts import ChatPromptTemplate, HumanMessagePromptTemplat
 from pydantic import BaseModel
 
 from src.solution.artifacts import append_jsonl
-from src.solution.constants import LLM_CALLS_PATH
+from src.solution.constants import DEFAULT_GEMINI_MODEL, GEMINI_PROVIDER, LLM_CALLS_PATH
 
 SchemaT = TypeVar("SchemaT", bound=BaseModel)
 
@@ -56,14 +56,14 @@ class StructuredLLM(Generic[SchemaT]):
         *,
         schema: type[SchemaT],
         model_name: str | None = None,
-        provider: str = "openrouter",
+        provider: str = GEMINI_PROVIDER,
         log_path: str | Path = LLM_CALLS_PATH,
         structured_model=None,
     ) -> None:
         load_dotenv()
         self.schema = schema
         self.provider = provider
-        self.model_name = model_name or os.getenv("OPENROUTER_MODEL", "anthropic/claude-haiku-4-5")
+        self.model_name = model_name or DEFAULT_GEMINI_MODEL
         self.log_path = Path(log_path)
         self._structured_model = structured_model
 
@@ -107,11 +107,17 @@ class StructuredLLM(Generic[SchemaT]):
         return self._structured_model
 
     def _chat_model(self):
-        try:
-            from langchain_openrouter import ChatOpenRouter
-        except ImportError as exc:
-            raise RuntimeError("Install langchain-openrouter to use OpenRouter chat models") from exc
-        return ChatOpenRouter(model=self.model_name, temperature=0)
+        from langchain_google_genai import ChatGoogleGenerativeAI
+
+        gemini_api_key = os.getenv("GEMINI_API_KEY")
+        if gemini_api_key is None:
+            raise RuntimeError("Set GEMINI_API_KEY to the API key from Google AI Studio")
+
+        return ChatGoogleGenerativeAI(
+            model=self.model_name,
+            temperature=0,
+            google_api_key=gemini_api_key,
+        )
 
     def _messages(self, prompt: str | ChatPromptTemplate, prompt_kwargs: dict) -> object:
         if isinstance(prompt, str):
