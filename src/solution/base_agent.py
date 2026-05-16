@@ -8,17 +8,25 @@ from langchain.agents import create_agent
 from langchain_core.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from pydantic import BaseModel
 
-from src.solution.constants import DEFAULT_GEMINI_MODEL
-
 SchemaT = TypeVar("SchemaT", bound=BaseModel)
 
 
 class BaseAgent(Generic[SchemaT]):
-    def __init__(self, schema: type[SchemaT], *, model: str | None = None) -> None:
+    default_model_name = "gemini-2.5-flash-lite"
+
+    def __init__(
+        self,
+        schema: type[SchemaT],
+        *,
+        model: str | None = None,
+    ) -> None:
         load_dotenv()
         self.schema = schema
-        self.model_name = model or DEFAULT_GEMINI_MODEL
+        self.model_name = self.select_model(model)
         self._structured_model = None
+
+    def select_model(self, model: str | None = None) -> str:
+        return model or self.default_model_name
 
     def invoke(self, prompt: str | ChatPromptTemplate, **kwargs) -> SchemaT:
         if isinstance(prompt, str):

@@ -137,7 +137,7 @@ Create a `.env` file in the project root:
 GEMINI_API_KEY=your_ai_studio_api_key_here
 ```
 
-> **Model selection:** The default model is selected in code via `DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite"` in `src/solution/constants.py`. Change that constant, or pass an explicit model when constructing the LLM helper, to use another Gemini model.
+> **Model selection:** The default provider and model are selected by `BaseAgent` in `src/solution/base_agent.py`. Change `BaseAgent.default_model_name`, or pass an explicit model when constructing the LLM helper, to use another Gemini model.
 
 ### 4. Provide input data
 
