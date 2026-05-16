@@ -1,12 +1,11 @@
 # Deriv Social Pipeline Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a replayable LangGraph pipeline that ingests Deriv social posts, preprocesses multilingual text, classifies posts, detects narratives, computes deterministic risk scores, routes escalations, drafts gated public responses, and validates all required artifacts.
 
-**Architecture:** Use LangGraph as the stage orchestrator and LangChain/Gemini for the four required LLM stages. Keep deterministic work in plain Python modules, preserve every intermediate artifact on disk, and validate stage order through metadata plus artifact checks.
+**Architecture:** Use LangGraph as the stage orchestrator and LangChain/OpenRouter for the four required LLM stages. Keep deterministic work in plain Python modules, preserve every intermediate artifact on disk, and validate stage order through metadata plus artifact checks.
 
-**Tech Stack:** Python 3.13, LangGraph, LangChain, langchain-google-genai, Pydantic, python-dotenv, pytest.
+**Tech Stack:** Python 3.13, LangGraph, LangChain, langchain-openrouter, Pydantic, python-dotenv, pytest.
 
 ---
 
@@ -18,7 +17,7 @@
 - Create `src/solution/constants.py`: controlled vocabularies, stage names, artifact paths, risk constants.
 - Modify `src/solution/schemas.py`: Pydantic schemas for posts, classifications, narratives, routes, drafts, state.
 - Modify `src/solution/artifacts.py`: JSON/Markdown/JSONL read-write helpers.
-- Modify `src/solution/llm.py`: Gemini model factory, prompt hashing, LLM call logging, structured invocation helper.
+- Modify `src/solution/llm.py`: OpenRouter model factory, prompt hashing, LLM call logging, structured invocation helper.
 - Modify `src/solution/prompts.py`: prompts for classification, narrative detection, routing, and response drafts.
 - Create `src/solution/preprocessing.py`: load posts, detect non-English text, translate or deterministic fallback for Malay.
 - Create `src/solution/classification.py`: Stage 1 LLM classification.
@@ -126,8 +125,8 @@ Each node should assert it received the expected previous stage before doing wor
 - Reuse: `src/solution/base_agent.py`
 - Test: `tests/test_llm_logging.py`
 
-- [ ] Create a LangChain/Gemini structured invocation helper using `ChatGoogleGenerativeAI`.
-- [ ] Read only `GEMINI_API_KEY` via `python-dotenv`; keep Gemini model selection in code via `DEFAULT_GEMINI_MODEL`.
+- [ ] Create a LangChain/OpenRouter structured invocation helper using `ChatOpenRouter`.
+- [ ] Read `OPENROUTER_API_KEY` and `OPENROUTER_MODEL` via `python-dotenv`.
 - [ ] Keep `temperature=0` for reproducibility.
 - [ ] Add `hash_prompt(prompt: str)` using SHA-256.
 - [ ] Add `log_llm_call(stage, provider, model, prompt, input_artifacts, output_artifact)`.
@@ -294,7 +293,8 @@ uv sync
 - [ ] Document required environment variables:
 
 ```bash
-GEMINI_API_KEY=...
+OPENROUTER_API_KEY=...
+OPENROUTER_MODEL=anthropic/claude-haiku-4-5
 ```
 
 - [ ] Document run commands:
