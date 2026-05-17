@@ -3,7 +3,7 @@ from datetime import datetime, UTC
 import pytest
 from pydantic import ValidationError
 
-from src.schemas import (
+from src.models import (
     ClassifiedPost,
     EscalationRoute,
     NarrativeDetectionInput,
