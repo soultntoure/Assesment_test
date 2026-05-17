@@ -1,9 +1,9 @@
 from pathlib import Path
 
 
-SENTIMENT_VALUES = ("positive", "negative", "neutral", "mixed")
+SENTIMENT = ("positive", "negative", "neutral", "mixed")
 
-TOPIC_VALUES = (
+TOPICS = (
     "withdrawal",
     "account_suspension",
     "spread_pricing",
@@ -15,9 +15,9 @@ TOPIC_VALUES = (
     "general",
 )
 
-URGENCY_VALUES = ("critical", "high", "medium", "low")
+URGENCY = ("critical", "high", "medium", "low")
 
-TEAM_VALUES = (
+TEAMS = (
     "Customer Support",
     "Legal",
     "Compliance",
