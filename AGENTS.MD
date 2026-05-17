@@ -364,7 +364,7 @@ Sort posts by risk score.
 
 Flag the top 5 for escalation.
 
-Append risk scores to `classified_posts.json` or save a separate `risk_scores.json`.
+Save a separate `risk_scores.json`.
 
 ---
 
@@ -486,7 +486,7 @@ Your repository must produce:
 - `preprocessed_posts.json`
 - `classified_posts.json`
 - `narratives.json`
-- `risk_scores.json`, if risk scores are not embedded in `classified_posts.json`
+- `risk_scores.json`
 - `escalation_routing.json`
 - `response_drafts.md`
 - `sentiment_trend.json`, if attempted

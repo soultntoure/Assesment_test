@@ -1,4 +1,4 @@
-# Deriv Social Pipeline Implementation Plan
+# Social Pipeline Implementation Plan
 
 
 **Goal:** Build a replayable LangGraph pipeline that ingests Deriv social posts, preprocesses multilingual text, classifies posts, detects narratives, computes deterministic risk scores, routes escalations, drafts gated public responses, and validates all required artifacts.
