@@ -1,6 +1,3 @@
-from pathlib import Path
-
-
 SENTIMENT = ("positive", "negative", "neutral", "mixed")
 
 TOPICS = (
@@ -27,7 +24,7 @@ TEAMS = (
     "Finance",
 )
 
-NARRATIVE_STRENGTH_VALUES = ("strong", "moderate", "weak")
+NARRATIVE_STRENGTH = ("strong", "moderate", "weak")
 
 STAGES = [
     "INIT",
